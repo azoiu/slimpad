@@ -1,0 +1,52 @@
+# PCB — SlimPad
+
+Designed in KiCad 9. 2-layer board, 100×100mm.
+
+## Files
+- `slimpad3.kicad_pcb` — PCB layout
+- `slimpad1.kicad_sch` — schematic
+- `slimpad1.kicad_pro` — project file
+
+## Screenshots
+![PCB layout](pcb.jpg)
+![Schematic](sch.jpg)
+
+## Specs
+| Parameter | Value |
+|-----------|-------|
+| Board size | 100 × 100 mm |
+| Layers | 2 (F.Cu signal, B.Cu GND plane) |
+| Thickness | 1.6 mm |
+| Switch count | 12 (3×4 matrix) |
+| Switch pitch | 19 mm (MX standard) |
+| Diode orientation | COL2ROW |
+
+## Components
+| Reference | Value | Footprint |
+|-----------|-------|-----------|
+| SW1–SW12 | MX switch | SW_Cherry_MX_1.00u_PCB |
+| D1–D12 | 1N4148 | D_DO-35_SOD27_P7.62mm_Horizontal |
+| SW13 | EC11 encoder | RotaryEncoder_Alps_EC11E_Vertical_H20mm |
+| U1 | XIAO RP2040 | XIAO-Generic-Hybrid-14P-2.54-21X17.8MM |
+| J1 | OLED 4-pin | PinHeader_1x04_P2.54mm_Vertical |
+
+## Pin Mapping
+| XIAO Pin | GPIO | Function |
+|----------|------|----------|
+| D0 | GPIO26 | ROW0 |
+| D1 | GPIO27 | ROW1 |
+| D2 | GPIO28 | ROW2 |
+| D3 | GPIO29 | ROW3 |
+| D6 | GPIO0 | COL0 |
+| D7 | GPIO1 | COL1 |
+| D8 | GPIO2 | COL2 |
+| D9 | GPIO4 | ENC A |
+| D10 | GPIO3 | ENC B |
+| MISO | GPIO16 | OLED SDA |
+| TX | GPIO20 | OLED SCL |
+
+## Ordering (JLCPCB)
+1. Go to https://jlcpcb.com
+2. Upload Gerber ZIP
+3. Settings: 2 layers, 1.6mm, FR4, any color
+4. Qty: 5 pcs (~$5)
