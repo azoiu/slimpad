@@ -1,0 +1,38 @@
+# CAD — SlimPad Case
+
+3D printed two-part case for the SlimPad macropad.
+
+## Files
+- `slimpad_top.stl` — top plate with switch cutouts, OLED window and encoder hole
+- `slimpad_bottom.stl` — bottom case with USB-C cutout and standoffs
+
+## What it looks like
+![Case exploded view](cad.jpg)
+![Case assembled](cad1.jpg)
+
+## Dimensions
+| Part | Value |
+|------|-------|
+| Outer size | 104 × 104 mm |
+| Total height | ~13 mm assembled |
+| Switch holes | 14 × 14 mm (MX standard) |
+| Switch grid | 3×4, 19mm pitch |
+| OLED window | 26 × 10 mm |
+| Encoder hole | 7 mm diameter |
+| USB-C cutout | 9 × 3.5 mm |
+
+## Print Settings
+| Setting | Value |
+|---------|-------|
+| Material | PLA or PETG |
+| Layer height | 0.2 mm |
+| Infill | 20% |
+| Walls | 3 |
+| Supports | No |
+| Gap between parts | 0.2 mm tolerance |
+
+## Assembly
+1. Press 4× M3×5mm×4mm heatset inserts into bottom case corners
+2. Place PCB onto standoffs
+3. Snap top plate over switches
+4. Secure with 4× M3×16mm screws from bottom
