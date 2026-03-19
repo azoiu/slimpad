@@ -1,0 +1,56 @@
+# Firmware — SlimPad
+
+KMK firmware written in CircuitPython for 12 switches + EC11 rotary encoder.
+
+## Files
+- `main.py` — main keyboard code
+
+## Features
+- **12 keys** with one-press shortcuts
+- **Rotary encoder** — scroll through clipboard history (last 5 copied items)
+- **Encoder click** — paste the selected clipboard entry
+- **OLED display** — live preview of selected clipboard entry and position in history
+
+## How clipboard history works
+1. Press **COPY** key → sends Ctrl+C and saves entry to history
+2. **Rotate encoder** left/right → scroll through last 5 copied items
+3. **Click encoder** or press **PASTE** key → pastes the currently selected entry
+4. OLED shows which entry is selected (e.g. `2/4`)
+
+## Key Layout
+```
+┌──────────┬──────────┬──────────┐
+│  COPY    │  PASTE   │  UNDO    │  ROW0
+├──────────┼──────────┼──────────┤
+│  SAVE    │ SAVE AS  │  REDO    │  ROW1
+├──────────┼──────────┼──────────┤
+│ SEL ALL  │  CUT     │  FIND    │  ROW2
+├──────────┼──────────┼──────────┤
+│  NEW     │  CLOSE   │  PSCR    │  ROW3
+└──────────┴──────────┴──────────┘
+```
+
+## Pin Mapping
+| XIAO Pin | Function |
+|----------|----------|
+| D0 | ROW0 |
+| D1 | ROW1 |
+| D2 | ROW2 |
+| D3 | ROW3 |
+| D6 | COL0 |
+| D7 | COL1 |
+| D8 | COL2 |
+| D9 | ENC A |
+| D10 | ENC B |
+| MISO | OLED SDA |
+| TX | OLED SCL |
+
+## Installation
+1. Download CircuitPython for XIAO RP2040:
+   https://circuitpython.org/board/seeeduino_xiao_rp2040
+2. Double-press BOOT button → BOOT drive appears
+3. Copy `.uf2` file to BOOT drive → CIRCUITPY drive appears
+4. Download KMK: https://github.com/KMKfw/kmk_firmware
+5. Copy `kmk/` folder into `CIRCUITPY/lib/`
+6. Copy `main.py` to root of `CIRCUITPY/`
+7. Plug in and use!
